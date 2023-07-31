@@ -1,15 +1,19 @@
 package br.com.matheuspadilha.bytebank.teste
 
+import br.com.matheuspadilha.bytebank.modelo.Cliente
 import br.com.matheuspadilha.bytebank.modelo.ContaCorrente
 import br.com.matheuspadilha.bytebank.modelo.ContaPoupanca
 
 fun testContasDiferentes() {
+
+    val matheus = Cliente("Matheus", "111.111.111-11", 1234)
     val contaCorrente = ContaCorrente(
-        titular = "Alex",
+        titular = matheus,
         numero = 1000
     )
+    val maya = Cliente("Maya", "222.222.222-22", 4321)
     val contaPoupanca = ContaPoupanca(
-        titular = "Fran",
+        titular = maya,
         numero = 1001
     )
 
