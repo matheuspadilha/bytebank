@@ -1,9 +1,9 @@
-package teste
+package br.com.matheuspadilha.bytebank.teste
 
-import modelo.Cliente
-import modelo.Diretor
-import modelo.Gerente
-import modelo.SistemaInterno
+import br.com.matheuspadilha.bytebank.modelo.Cliente
+import br.com.matheuspadilha.bytebank.modelo.Diretor
+import br.com.matheuspadilha.bytebank.modelo.Gerente
+import br.com.matheuspadilha.bytebank.modelo.SistemaInterno
 
 fun testAutenticacao() {
     val gerente = Gerente(

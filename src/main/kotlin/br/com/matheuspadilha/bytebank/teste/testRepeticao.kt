@@ -1,4 +1,4 @@
-package teste
+package br.com.matheuspadilha.bytebank.teste
 
 fun testRepeticao() {
     for (i in 1..5) {

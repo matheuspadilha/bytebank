@@ -1,4 +1,4 @@
-package modelo
+package br.com.matheuspadilha.bytebank.modelo
 
 class SistemaInterno {
     fun entrar(admin: Autenticavel, senha: Int) {

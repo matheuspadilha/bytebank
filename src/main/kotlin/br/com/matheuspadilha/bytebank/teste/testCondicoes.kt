@@ -1,4 +1,4 @@
-package teste
+package br.com.matheuspadilha.bytebank.teste
 
 fun testCondicoes(saldo: Double) {
     if (saldo > 0.0) {

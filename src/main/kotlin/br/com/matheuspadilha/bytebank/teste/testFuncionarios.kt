@@ -1,9 +1,9 @@
-package teste
+package br.com.matheuspadilha.bytebank.teste
 
-import modelo.Analista
-import modelo.CalculadoraBonificacao
-import modelo.Diretor
-import modelo.Gerente
+import br.com.matheuspadilha.bytebank.modelo.Analista
+import br.com.matheuspadilha.bytebank.modelo.CalculadoraBonificacao
+import br.com.matheuspadilha.bytebank.modelo.Diretor
+import br.com.matheuspadilha.bytebank.modelo.Gerente
 
 fun testFuncionarios() {
     val alex = Analista(
