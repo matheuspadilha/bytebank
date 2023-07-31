@@ -1,4 +1,11 @@
-fun testaAutenticacao() {
+package teste
+
+import modelo.Cliente
+import modelo.Diretor
+import modelo.Gerente
+import modelo.SistemaInterno
+
+fun testAutenticacao() {
     val gerente = Gerente(
         nome = "Alex",
         cpf = "111.111.111-11",

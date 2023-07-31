@@ -1,3 +1,5 @@
+package teste
+
 fun testRepeticao() {
     for (i in 1..5) {
         println(i)

@@ -1,4 +1,11 @@
-fun testaFuncionarios() {
+package teste
+
+import modelo.Analista
+import modelo.CalculadoraBonificacao
+import modelo.Diretor
+import modelo.Gerente
+
+fun testFuncionarios() {
     val alex = Analista(
         nome = "Alex",
         cpf = "111.111.111-11",

@@ -1,4 +1,9 @@
-fun testaContasDiferentes() {
+package teste
+
+import modelo.ContaCorrente
+import modelo.ContaPoupanca
+
+fun testContasDiferentes() {
     val contaCorrente = ContaCorrente(
         titular = "Alex",
         numero = 1000
