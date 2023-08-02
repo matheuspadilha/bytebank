@@ -3,8 +3,8 @@ package br.com.matheuspadilha.bytebank.modelo
 class Cliente(
     var nome: String,
     val cpf: String,
-    var endereco: Endereco = Endereco(),
-    private val senha: Int
+    private val senha: Int,
+    var endereco: Endereco = Endereco()
 ) : Autenticavel {
     override fun autenticar(senha: Int): Boolean {
         return this.senha == senha
