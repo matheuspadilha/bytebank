@@ -1,9 +1,12 @@
 package br.com.matheuspadilha.bytebank.modelo
 
+import br.com.matheuspadilha.bytebank.exception.FalhaAutenticacaoException
+import br.com.matheuspadilha.bytebank.exception.SaldoInsuficienteException
+
 abstract class Conta(
     var titular: Cliente,
     val numero: Int
-) {
+) : Autenticavel {
     var saldo = 0.0
         protected set
 
@@ -23,14 +26,19 @@ abstract class Conta(
 
     abstract fun sacar(valor: Double)
 
-    fun transferir(valor: Double, destino: Conta): Boolean {
-        if (this.saldo >= valor) {
-            this.saldo -= valor
-            destino.depositar(valor)
-            return true
-        }
+    fun transferir(valor: Double, destino: Conta, senha: Int) {
+        if (this.saldo < valor)
+            throw SaldoInsuficienteException()
 
-        return false
+        if (!autenticar(senha))
+            throw FalhaAutenticacaoException()
+
+        this.saldo -= valor
+        destino.depositar(valor)
+    }
+
+    override fun autenticar(senha: Int): Boolean {
+        return titular.autenticar(senha)
     }
 }
 

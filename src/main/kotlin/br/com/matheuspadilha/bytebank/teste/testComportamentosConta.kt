@@ -1,5 +1,7 @@
 package br.com.matheuspadilha.bytebank.teste
 
+import br.com.matheuspadilha.bytebank.exception.FalhaAutenticacaoException
+import br.com.matheuspadilha.bytebank.exception.SaldoInsuficienteException
 import br.com.matheuspadilha.bytebank.modelo.Cliente
 import br.com.matheuspadilha.bytebank.modelo.ContaCorrente
 import br.com.matheuspadilha.bytebank.modelo.ContaPoupanca
@@ -48,10 +50,17 @@ fun testComportamentosConta() {
 
     println("Transferência da conta da Maya para o Matheus")
 
-    if (contaMaya.transferir(destino = contaMatheus, valor = 300.0)) {
+    try {
+        contaMaya.transferir(destino = contaMatheus, valor = 300.0, senha = 4321)
         println("Transferência sucedida")
-    } else {
+    } catch (e: SaldoInsuficienteException) {
         println("Falha na transferência")
+        println("Saldo Insuficiente")
+        e.printStackTrace()
+    } catch (e: FalhaAutenticacaoException) {
+        println("Falha na transferência")
+        println("Falha na autenticação")
+        e.printStackTrace()
     }
 
     println(contaMatheus.saldo)
